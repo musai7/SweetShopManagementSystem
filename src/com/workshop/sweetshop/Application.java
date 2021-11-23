@@ -30,7 +30,8 @@ public class Application {
 	private void handleUserSelection(int input) {
 		
 		UserInterface userInterface = new UserInterface();
-		
+		Scanner scanner = new Scanner(System.in);
+
 		switch (input) {
 			case 1:
 				Laddu laddu = new Laddu();
@@ -50,19 +51,23 @@ public class Application {
 				sweetStore.add(mothichur);
 				break;
 			case 2:
-				Scanner scanner = new Scanner(System.in);
 				System.out.println("enter A sweet name : ");
 				String sweetName = scanner.nextLine();
 				Sweet sweet = sweetStore.getSweet(sweetName);
 				sweetStore.delete(sweet);
 				break;
 			case 3:
+				System.out.println("enter A sweet name to edit : ");
+				String sweetName1 = scanner.nextLine();
+				Sweet sweet1 = sweetStore.getSweet(sweetName1);
+				
+				sweetStore.updateSweet(sweet1);
+				
 				break;
 			case 4:
 				userInterface.printAllSweets(sweetStore.getList());
 				break;
 			case EXIT_VALUE:
-				
 				break;
 		}
 	}

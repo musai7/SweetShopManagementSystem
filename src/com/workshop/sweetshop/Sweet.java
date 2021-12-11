@@ -4,68 +4,58 @@ import java.util.List;
 import java.util.Objects;
 
 public class Sweet {
-	
-	enum Shape{TRIANGLE, SQUARE, ROUND, CONE}
-	enum Colour{RED, GREEN, BLUE, ORANGE}
+
+	enum Shape {
+		TRIANGLE, SQUARE, ROUND, CONE
+	}
+
+	enum Colour {
+		RED, GREEN, BLUE, ORANGE
+	}
+
 	String name;
 	Shape shape;
 	Colour colour;
 	int price;
 	List<String> ingredients;
-	
+
 	@Override
 	public String toString() {
-		return getClass().getSimpleName() + " [shape=" + shape + ", colour=" + colour + ", price=" + price + ", ingredients=" + ingredients
-				+ "]";
+		return "Sweet [name=" + name + ", shape=" + shape + ", colour=" + colour + ", price=" + price + ", ingredients="
+				+ ingredients + "]";
 	}
-	
-	
 
 	public int getPrice() {
 		return price;
 	}
 
-
-
 	public void setPrice(int price) {
 		this.price = price;
 	}
-
-
 
 	public String getName() {
 		return name;
 	}
 
-
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
 
 	public void setIngredients(List<String> ingredients) {
 		this.ingredients = ingredients;
 	}
 
-
 	public Shape getShape() {
 		return shape;
 	}
-
-
 
 	public void setShape(Shape shape) {
 		this.shape = shape;
 	}
 
-
-
 	public Colour getColour() {
 		return colour;
 	}
-
-
 
 	public void setColour(Colour colour) {
 		this.colour = colour;
@@ -75,7 +65,6 @@ public class Sweet {
 	public int hashCode() {
 		return Objects.hash(colour, ingredients, name, price, shape);
 	}
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -89,6 +78,5 @@ public class Sweet {
 		return Objects.equals(colour, other.colour) && Objects.equals(ingredients, other.ingredients)
 				&& Objects.equals(name, other.name) && price == other.price && Objects.equals(shape, other.shape);
 	}
-	
-	
+
 }
